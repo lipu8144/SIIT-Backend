@@ -20,7 +20,7 @@ const serviceAccountKeyJson = Buffer.from(
 const serviceAccount = JSON.parse(serviceAccountKeyJson);
 
 const server = express();
-let PORT = 3000
+let PORT = process.env.PORT || 3000
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
